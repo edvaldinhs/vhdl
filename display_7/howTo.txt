@@ -1,0 +1,12 @@
+Sinal VHDL  	  Componente DE2-115	Pino FPGA (Ciclone IV)
+hex_in[0]   	  SW[0]	              PIN_AB28
+hex_in[1]    	  SW[1]	              PIN_AC28
+hex_in[2]	      SW[2]	              PIN_AC27
+hex_in[3]	      SW[3]	              PIN_AD27
+seg_out[0] (a)	HEX0[0]	            PIN_G18
+seg_out[1] (b)	HEX0[1]	            PIN_F22
+seg_out[2] (c)	HEX0[2]	            PIN_E17
+seg_out[3] (d)	HEX0[3]	            PIN_L26
+seg_out[4] (e)	HEX0[4]	            PIN_L25
+seg_out[5] (f)	HEX0[5]	            PIN_J22
+seg_out[6] (g)	HEX0[6]	            PIN_H22
