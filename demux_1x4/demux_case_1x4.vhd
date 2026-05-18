@@ -2,9 +2,9 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
 ENTITY demux_case_1x4 IS
-PORT (x : IN STD_LOGIC;
+PORT (x : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	s1, s2 : IN STD_LOGIC;
-	a, b, c, d : OUT STD_LOGIC);
+	a, b, c, d : OUT STD_LOGIC_VECTOR(2 DOWNTO 0));
 END;
 
 ARCHITECTURE dem OF demux_case_1x4 IS
@@ -14,7 +14,7 @@ BEGIN
 
     PROCESS(x, sel)
     BEGIN
-        a <= '0'; b <= '0'; c <= '0'; d <= '0';
+        a <= "000"; b <= "000"; c <= "000"; d <= "000";
 
         CASE sel IS
             WHEN "00" =>
