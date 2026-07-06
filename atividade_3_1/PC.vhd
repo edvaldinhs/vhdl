@@ -45,10 +45,10 @@ BEGIN
 
             WHEN IDLE =>
 
-                IF btn_write = '0' THEN
+                IF btn_write = '1' THEN
                     PE <= WRITE;
 
-                ELSIF btn_read = '0' THEN
+                ELSIF btn_read = '1' THEN
                     PE <= READ;
 
                 ELSE
