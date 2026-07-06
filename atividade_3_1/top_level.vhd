@@ -45,16 +45,32 @@ ARCHITECTURE Structural OF top_level IS
             seg : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
         );
     END COMPONENT;
+	 
+		SIGNAL we_sig         : STD_LOGIC;
+		SIGNAL operation_sig  : STD_LOGIC_VECTOR(1 DOWNTO 0);
+		SIGNAL data_out_sig   : STD_LOGIC_VECTOR(15 DOWNTO 0);
+		SIGNAL display_data   : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-    SIGNAL we_sig : STD_LOGIC;
-
-    SIGNAL operation_sig : STD_LOGIC_VECTOR(1 DOWNTO 0);
-
-    SIGNAL data_out_sig : STD_LOGIC_VECTOR(15 DOWNTO 0);
-
-    SIGNAL display_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
+		SIGNAL endereco_reg   : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
 
 BEGIN
+
+	PROCESS(CLOCK_50)
+	BEGIN
+		 IF rising_edge(CLOCK_50) THEN
+
+			  -- Modo endereço
+			  IF SW(17) = '0' THEN
+
+					-- Pressionou KEY0
+					IF KEY(0) = '0' THEN
+						 endereco_reg <= SW(2 DOWNTO 0);
+					END IF;
+
+			  END IF;
+
+		 END IF;
+	END PROCESS;
 
     ------------------------------------------------
     -- PC
@@ -79,7 +95,7 @@ BEGIN
     PORT MAP(
         clk       => CLOCK_50,
         we        => we_sig,
-        endereco  => SW(17 DOWNTO 15),
+        endereco  => endereco_reg,
         data_in   => SW(15 DOWNTO 0),
         data_out  => data_out_sig
     );
