@@ -5,8 +5,12 @@ ENTITY top_level IS
     PORT(
         CLOCK_50 : IN STD_LOGIC;
 
-        SW  : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+        SW  : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		  ADDR : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+		  
+		  SAIDA: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		  OP_S: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 
         HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -57,18 +61,10 @@ BEGIN
 
 	PROCESS(CLOCK_50)
 	BEGIN
-		 IF rising_edge(CLOCK_50) THEN
-
-			  -- Modo endereço
-			  IF SW(17) = '0' THEN
-
-					-- Pressionou KEY0
-					IF KEY(0) = '0' THEN
-						 endereco_reg <= SW(2 DOWNTO 0);
-					END IF;
-
-			  END IF;
-
+		 IF rising_edge(CLOCK_50) THEN	
+				IF KEY(0) = '0' THEN
+						 endereco_reg <= ADDR & SW(15);
+				END IF;
 		 END IF;
 	END PROCESS;
 
@@ -114,6 +110,9 @@ BEGIN
     ------------------------------------------------
     -- Displays
     ------------------------------------------------
+	 
+	 SAIDA <= data_out_sig;
+	 OP_S <= operation_sig;
 
     HEX0_INST : hex7seg
         PORT MAP(display_data(3 DOWNTO 0), HEX0);
