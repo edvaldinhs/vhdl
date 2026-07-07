@@ -1,0 +1,25 @@
+
+State Machine - |top_level|DivisaoSubSuc:ALGORITMO|PC_Divisao:U_PC|estado_atual
+Name estado_atual.S_DONE estado_atual.S_WRITE_Q estado_atual.S_SAVE_Q estado_atual.S_REQ_Q estado_atual.S_WRITE_R estado_atual.S_COMPARE estado_atual.S_SAVE_R estado_atual.S_REQ_R estado_atual.S_INIT_Q estado_atual.S_INIT_R estado_atual.S_CHECK estado_atual.S_SAVE_B estado_atual.S_REQ_B estado_atual.S_SAVE_A estado_atual.S_REQ_A estado_atual.S_IDLE 
+estado_atual.S_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+estado_atual.S_REQ_A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+estado_atual.S_SAVE_A 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+estado_atual.S_REQ_B 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+estado_atual.S_SAVE_B 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+estado_atual.S_CHECK 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+estado_atual.S_INIT_R 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+estado_atual.S_INIT_Q 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+estado_atual.S_REQ_R 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+estado_atual.S_SAVE_R 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+estado_atual.S_COMPARE 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+estado_atual.S_WRITE_R 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+estado_atual.S_REQ_Q 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+estado_atual.S_SAVE_Q 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+estado_atual.S_WRITE_Q 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+estado_atual.S_DONE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top_level|PC:CONTROL|EA
+Name EA.WRITE EA.READ EA.IDLE 
+EA.IDLE 0 0 0 
+EA.READ 0 1 1 
+EA.WRITE 1 0 1 

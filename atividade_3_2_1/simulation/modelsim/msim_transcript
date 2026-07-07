@@ -1,0 +1,165 @@
+# do top_level_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/edvaldinhs/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO_Divisao.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:12 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO_Divisao.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PO_Divisao
+# -- Compiling architecture Operativa of PO_Divisao
+# End time: 15:03:12 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:12 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PO
+# -- Compiling architecture Structural of PO
+# End time: 15:03:12 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/decoder3x8.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:12 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/decoder3x8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder3x8
+# -- Compiling architecture Behavioral of decoder3x8
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/registrador16bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/registrador16bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity registrador16bits
+# -- Compiling architecture Behavioral of registrador16bits
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC_Divisao.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC_Divisao.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC_Divisao
+# -- Compiling architecture FSM of PC_Divisao
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/hex7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/hex7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity hex7seg
+# -- Compiling architecture Behavioral of hex7seg
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC
+# -- Compiling architecture Behavioral of PC
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/DivisaoSubSuc.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/DivisaoSubSuc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DivisaoSubSuc
+# -- Compiling architecture Estrutural of DivisaoSubSuc
+# -- Loading package NUMERIC_STD
+# -- Loading entity PO_Divisao
+# -- Loading entity PC_Divisao
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top_level
+# -- Compiling architecture Structural of top_level
+# -- Loading entity DivisaoSubSuc
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/tb_top_level.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:03:13 on Jul 07,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/tb_top_level.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_top_level
+# -- Compiling architecture sim of tb_top_level
+# -- Loading entity top_level
+# End time: 15:03:13 on Jul 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  tb_top_level
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" tb_top_level 
+# Start time: 15:03:13 on Jul 07,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_top_level(sim)
+# Loading work.top_level(structural)
+# Loading work.pc(behavioral)
+# Loading work.divisaosubsuc(estrutural)
+# Loading work.po_divisao(operativa)
+# Loading work.pc_divisao(fsm)
+# Loading work.po(structural)
+# Loading work.decoder3x8(behavioral)
+# Loading work.registrador16bits(behavioral)
+# Loading work.hex7seg(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level/uut/ALGORITMO/U_PO
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level/uut/ALGORITMO/U_PO
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level/uut/ALGORITMO/U_PO
+# ** Failure: Fim da simulação com sucesso!
+#    Time: 1930 ns  Iteration: 0  Process: /tb_top_level/stim_proc File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/tb_top_level.vhd
+# Break in Process stim_proc at /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/tb_top_level.vhd line 108
+# End time: 15:04:35 on Jul 07,2026, Elapsed time: 0:01:22
+# Errors: 1, Warnings: 3

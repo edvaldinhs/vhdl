@@ -63,12 +63,12 @@ BEGIN
         sel_escrita    <= "00";
         banco_endereco <= "000";
         banco_we       <= '0';
-        divisor_ativo  <= '1';
+        divisor_ativo  <= '1'; -- Por padrão, a FSM domina o banco durante a operação
         led_pronto     <= '0'; led_erro_b0    <= '0'; led_erro_ba    <= '0';
 
         CASE estado_atual IS
             WHEN S_IDLE =>
-                divisor_ativo <= '0';
+                divisor_ativo <= '0'; -- Devolve o controle para o PC manual
                 IF start = '1' THEN
                     proximo_estado <= S_REQ_A;
                 END IF;
@@ -78,7 +78,6 @@ BEGIN
                 proximo_estado <= S_SAVE_A;
 
             WHEN S_SAVE_A =>
-					banco_endereco <= "000";
                 cmd_salvar_a   <= '1';
                 proximo_estado <= S_REQ_B;
 
@@ -87,7 +86,6 @@ BEGIN
                 proximo_estado <= S_SAVE_B;
 
             WHEN S_SAVE_B =>
-					banco_endereco <= "001";
                 cmd_salvar_b   <= '1';
                 proximo_estado <= S_CHECK;
 
@@ -115,7 +113,6 @@ BEGIN
                 proximo_estado <= S_SAVE_R;
 
             WHEN S_SAVE_R =>
-					banco_endereco <= "011";
                 cmd_salvar_r   <= '1';
                 proximo_estado <= S_COMPARE;
 
@@ -137,7 +134,6 @@ BEGIN
                 proximo_estado <= S_SAVE_Q;
 
             WHEN S_SAVE_Q =>
-					banco_endereco <= "010";
                 cmd_salvar_q   <= '1';
                 proximo_estado <= S_WRITE_Q;
 
