@@ -8,7 +8,7 @@ ENTITY top_level IS
         SW       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         KEY      : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         ADDR     : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-          
+
         SAIDA    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         OP_S     : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 
@@ -17,7 +17,7 @@ ENTITY top_level IS
         HEX2     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX3     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX4     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-        
+
         LEDG     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
 END top_level;
@@ -58,7 +58,7 @@ ARCHITECTURE Structural OF top_level IS
     SIGNAL addr_sig_w, addr_sig_r, endereco_reg : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
     SIGNAL we_sig : STD_LOGIC;
     SIGNAL data_in_sig : STD_LOGIC_VECTOR(15 DOWNTO 0);
-     
+
     SIGNAL valor_binario : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL valor_bcd     : STD_LOGIC_VECTOR(19 DOWNTO 0);
     SIGNAL display_final : STD_LOGIC_VECTOR(19 DOWNTO 0);
@@ -117,7 +117,7 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-     
+
     SAIDA <= po_data_out;
     OP_S  <= pc_operation;
 

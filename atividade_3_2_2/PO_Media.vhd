@@ -8,14 +8,14 @@ ENTITY PO_Media IS
         reg_0_in      : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
         reg_1_in      : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
         sel_escrita   : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
-        
+
         banco_escrita : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END PO_Media;
 
 ARCHITECTURE Operativa OF PO_Media IS
     CONSTANT CONST_X : UNSIGNED(15 DOWNTO 0) := x"0E97"; 
-    
+
     SIGNAL soma  : UNSIGNED(16 DOWNTO 0);
     SIGNAL media : UNSIGNED(15 DOWNTO 0);
 BEGIN

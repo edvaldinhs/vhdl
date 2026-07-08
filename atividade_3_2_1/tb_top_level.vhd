@@ -12,12 +12,12 @@ ARCHITECTURE sim OF tb_top_level IS
     SIGNAL btn_read : STD_LOGIC := '1'; -- KEY(1)
     SIGNAL btn_start: STD_LOGIC := '1'; -- KEY(0)
     SIGNAL switches : STD_LOGIC_VECTOR(17 DOWNTO 0) := (OTHERS => '0');
-	 
+
     SIGNAL sim_quociente : STD_LOGIC_VECTOR(15 DOWNTO 0);
     SIGNAL sim_resto     : STD_LOGIC_VECTOR(15 DOWNTO 0);
-    
+
     SIGNAL s_keys   : STD_LOGIC_VECTOR(3 DOWNTO 0);
-    
+
     -- Saídas
     SIGNAL hex0, hex1, hex2, hex3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
     SIGNAL led_pronto : STD_LOGIC_VECTOR(0 DOWNTO 0);
@@ -42,7 +42,7 @@ BEGIN
 				var_quociente => sim_quociente,
 				var_resto     => sim_resto
         );
-		  
+
 
     -- Gerador do clock
     clk_process : PROCESS
@@ -62,7 +62,7 @@ BEGIN
         ------------------------------------------------------------
         -- TESTE 1: Divisão normal (A = 15, B = 4) -> Q=3, R=3
         ------------------------------------------------------------
-        
+
         -- Passo 2: Gravar A=15 no Reg 000
         switches(17 DOWNTO 15) <= "000";                                 -- Endereço 0
         switches(14 DOWNTO 0)  <= STD_LOGIC_VECTOR(to_unsigned(15, 15)); -- Dado A = 15
@@ -79,7 +79,7 @@ BEGIN
 
         -- Passo 4: Disparar a Divisão
         btn_start <= '0'; WAIT FOR CLK_PERIOD * 2; btn_start <= '1';
-        
+
         -- Passo 5: Aguardar a FSM terminar
         WAIT UNTIL led_pronto(0) = '1';
         WAIT FOR CLK_PERIOD * 10;
@@ -99,7 +99,7 @@ BEGIN
 
         -- Disparar
         btn_start <= '0'; WAIT FOR CLK_PERIOD * 2; btn_start <= '1';
-        
+
         -- Aguardar sinalização de erro
         WAIT UNTIL led_pronto(0) = '1';
         ASSERT leds_erro(16) = '1' REPORT "Erro: Sinalização de B > A falhou!" SEVERITY ERROR;

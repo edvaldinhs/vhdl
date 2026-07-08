@@ -12,9 +12,9 @@ ARCHITECTURE sim OF tb_top_level_media IS
     SIGNAL btn_read   : STD_LOGIC := '1'; 
     SIGNAL switches   : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
     SIGNAL addr_sig   : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00"; 
-    
+
     SIGNAL s_keys     : STD_LOGIC_VECTOR(3 DOWNTO 0);
-    
+
     SIGNAL hex0, hex1, hex2, hex3, hex4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
     SIGNAL led_pronto : STD_LOGIC_VECTOR(0 DOWNTO 0);
     SIGNAL saida_reg  : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -51,12 +51,12 @@ BEGIN
 
         switches <= STD_LOGIC_VECTOR(to_unsigned(1000, 16));
         WAIT FOR CLK_PERIOD * 2;
-        
+
         btn_start <= '0'; WAIT FOR CLK_PERIOD * 2; btn_start <= '1';
         WAIT FOR CLK_PERIOD * 10;
 
         btn_start <= '0'; WAIT FOR CLK_PERIOD * 2; btn_start <= '1';
-        
+
         WAIT UNTIL led_pronto(0) = '1';
         WAIT FOR CLK_PERIOD * 5;
 

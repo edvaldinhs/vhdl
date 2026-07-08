@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_level
-Tue Jul  7 15:02:23 2026
+Wed Jul  8 03:18:22 2026
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -18,9 +18,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 13. Port Connectivity Checks: "bin2bcd:CONV_R"
+ 14. Port Connectivity Checks: "bin2bcd:CONV_Q"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,13 +49,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul  7 15:02:23 2026       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul  8 03:18:22 2026       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; top_level                                   ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 493                                         ;
-;     Total combinational functions  ; 295                                         ;
+; Total logic elements               ; 560                                         ;
+;     Total combinational functions  ; 362                                         ;
 ;     Dedicated logic registers      ; 239                                         ;
 ; Total registers                    ; 239                                         ;
 ; Total pins                         ; 86                                          ;
@@ -163,7 +165,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -181,6 +184,7 @@ https://fpgasoftware.intel.com/eula.
 ; hex7seg.vhd                      ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/hex7seg.vhd           ;         ;
 ; top_level.vhd                    ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd         ;         ;
 ; PC.vhd                           ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC.vhd                ;         ;
+; bin2bcd.vhd                      ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/bin2bcd.vhd           ;         ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 
 
@@ -189,16 +193,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 493            ;
+; Estimated Total logic elements              ; 560            ;
 ;                                             ;                ;
-; Total combinational functions               ; 295            ;
+; Total combinational functions               ; 362            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 180            ;
-;     -- 3 input functions                    ; 100            ;
-;     -- <=2 input functions                  ; 15             ;
+;     -- 4 input functions                    ; 249            ;
+;     -- 3 input functions                    ; 96             ;
+;     -- <=2 input functions                  ; 17             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 249            ;
+;     -- normal mode                          ; 316            ;
 ;     -- arithmetic mode                      ; 46             ;
 ;                                             ;                ;
 ; Total registers                             ; 239            ;
@@ -211,8 +215,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 239            ;
-; Total fan-out                               ; 1980           ;
-; Average fan-out                             ; 2.80           ;
+; Total fan-out                               ; 2248           ;
+; Average fan-out                             ; 2.91           ;
 +---------------------------------------------+----------------+
 
 
@@ -221,13 +225,13 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
 +--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; |top_level                     ; 295 (45)            ; 239 (32)                  ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |top_level                                         ; top_level         ; work         ;
-;    |DivisaoSubSuc:ALGORITMO|   ; 131 (0)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|DivisaoSubSuc:ALGORITMO                 ; DivisaoSubSuc     ; work         ;
+; |top_level                     ; 362 (79)            ; 239 (32)                  ; 0           ; 0            ; 0       ; 0         ; 86   ; 0            ; |top_level                                         ; top_level         ; work         ;
+;    |DivisaoSubSuc:ALGORITMO|   ; 128 (0)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|DivisaoSubSuc:ALGORITMO                 ; DivisaoSubSuc     ; work         ;
 ;       |PC_Divisao:U_PC|        ; 10 (10)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|DivisaoSubSuc:ALGORITMO|PC_Divisao:U_PC ; PC_Divisao        ; work         ;
-;       |PO_Divisao:U_PO|        ; 121 (121)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|DivisaoSubSuc:ALGORITMO|PO_Divisao:U_PO ; PO_Divisao        ; work         ;
+;       |PO_Divisao:U_PO|        ; 118 (118)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|DivisaoSubSuc:ALGORITMO|PO_Divisao:U_PO ; PO_Divisao        ; work         ;
 ;    |PC:CONTROL|                ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PC:CONTROL                              ; PC                ; work         ;
-;    |PO:OPERATIVA|              ; 88 (78)             ; 124 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA                            ; PO                ; work         ;
-;       |decoder3x8:dec|         ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|decoder3x8:dec             ; decoder3x8        ; work         ;
+;    |PO:OPERATIVA|              ; 86 (78)             ; 124 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA                            ; PO                ; work         ;
+;       |decoder3x8:dec|         ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|decoder3x8:dec             ; decoder3x8        ; work         ;
 ;       |registrador16bits:reg0| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg0     ; registrador16bits ; work         ;
 ;       |registrador16bits:reg1| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg1     ; registrador16bits ; work         ;
 ;       |registrador16bits:reg2| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg2     ; registrador16bits ; work         ;
@@ -236,6 +240,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |registrador16bits:reg5| ; 0 (0)               ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg5     ; registrador16bits ; work         ;
 ;       |registrador16bits:reg6| ; 0 (0)               ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg6     ; registrador16bits ; work         ;
 ;       |registrador16bits:reg7| ; 0 (0)               ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg7     ; registrador16bits ; work         ;
+;    |bin2bcd:CONV_Q|            ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|bin2bcd:CONV_Q                          ; bin2bcd           ; work         ;
+;    |bin2bcd:CONV_R|            ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|bin2bcd:CONV_R                          ; bin2bcd           ; work         ;
 ;    |hex7seg:HEX0_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX0_INST                       ; hex7seg           ; work         ;
 ;    |hex7seg:HEX1_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX1_INST                       ; hex7seg           ; work         ;
 ;    |hex7seg:HEX2_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX2_INST                       ; hex7seg           ; work         ;
@@ -314,12 +320,33 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_level|PC:CONTROL|PE.READ ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |top_level|PO:OPERATIVA|Mux11 ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |top_level|po_data_in[11]     ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |top_level|display_data[9]    ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top_level|display_data[0]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_level|PC:CONTROL|PE.IDLE ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |top_level|PO:OPERATIVA|Mux2  ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |top_level|po_data_in[3]      ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|display_data[4]    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top_level|display_data[1]    ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level|display_data[5]    ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top_level|display_data[11]   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|display_data[14]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CONV_R"                                                                               ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; bcd_out[11..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CONV_Q"                                                                               ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; bcd_out[11..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -332,17 +359,17 @@ Encoding Type:  One-Hot
 ;     CLR               ; 19                          ;
 ;     ENA               ; 156                         ;
 ;     ENA CLR           ; 64                          ;
-; cycloneiii_lcell_comb ; 299                         ;
+; cycloneiii_lcell_comb ; 366                         ;
 ;     arith             ; 46                          ;
 ;         3 data inputs ; 46                          ;
-;     normal            ; 253                         ;
+;     normal            ; 320                         ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 54                          ;
-;         4 data inputs ; 180                         ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 50                          ;
+;         4 data inputs ; 249                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.54                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.38                        ;
 +-----------------------+-----------------------------+
 
 
@@ -351,7 +378,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -361,7 +388,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul  7 15:02:16 2026
+    Info: Processing started: Wed Jul  8 03:18:14 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -392,26 +419,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file top_lev
 Info (12021): Found 2 design units, including 1 entities, in source file PC.vhd
     Info (12022): Found design unit 1: PC-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC.vhd Line: 17
     Info (12023): Found entity 1: PC File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PC.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd.vhd
+    Info (12022): Found design unit 1: bin2bcd-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/bin2bcd.vhd Line: 12
+    Info (12023): Found entity 1: bin2bcd File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/bin2bcd.vhd Line: 5
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
-Info (12128): Elaborating entity "PC" for hierarchy "PC:CONTROL" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 94
-Info (12128): Elaborating entity "DivisaoSubSuc" for hierarchy "DivisaoSubSuc:ALGORITMO" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 107
+Info (12128): Elaborating entity "PC" for hierarchy "PC:CONTROL" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 103
+Info (12128): Elaborating entity "DivisaoSubSuc" for hierarchy "DivisaoSubSuc:ALGORITMO" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 108
 Info (12128): Elaborating entity "PO_Divisao" for hierarchy "DivisaoSubSuc:ALGORITMO|PO_Divisao:U_PO" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/DivisaoSubSuc.vhd Line: 32
 Info (12128): Elaborating entity "PC_Divisao" for hierarchy "DivisaoSubSuc:ALGORITMO|PC_Divisao:U_PC" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/DivisaoSubSuc.vhd Line: 48
-Info (12128): Elaborating entity "PO" for hierarchy "PO:OPERATIVA" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 132
+Info (12128): Elaborating entity "PO" for hierarchy "PO:OPERATIVA" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 133
 Info (12128): Elaborating entity "decoder3x8" for hierarchy "PO:OPERATIVA|decoder3x8:dec" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO.vhd Line: 40
 Info (12128): Elaborating entity "registrador16bits" for hierarchy "PO:OPERATIVA|registrador16bits:reg0" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/PO.vhd Line: 47
-Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:HEX0_INST" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 180
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CONV_Q" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 153
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:HEX0_INST" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_1/top_level.vhd Line: 181
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 612 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 679 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 63 output pins
-    Info (21061): Implemented 526 logic cells
+    Info (21061): Implemented 593 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 480 megabytes
-    Info: Processing ended: Tue Jul  7 15:02:23 2026
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Wed Jul  8 03:18:22 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 

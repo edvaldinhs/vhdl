@@ -12,11 +12,11 @@ ENTITY top_level IS
         HEX1     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX2     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX3     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-        
+
         LEDG     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
         LEDR     : OUT STD_LOGIC_VECTOR(17 DOWNTO 16);
-		  
-		  var_quociente : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+        var_quociente : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         var_resto     : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END top_level;
@@ -51,6 +51,13 @@ ARCHITECTURE Structural OF top_level IS
         );
     END COMPONENT;
 
+    COMPONENT bin2bcd
+        PORT (
+            bin_in  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+            bcd_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+        );
+    END COMPONENT;
+
     SIGNAL s_reset     : STD_LOGIC;
     SIGNAL s_btn_read  : STD_LOGIC;
     SIGNAL s_btn_write : STD_LOGIC;
@@ -78,6 +85,9 @@ ARCHITECTURE Structural OF top_level IS
     SIGNAL reg2_quociente: STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
     SIGNAL reg3_resto    : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
 
+    SIGNAL bcd_quociente : STD_LOGIC_VECTOR(11 DOWNTO 0);
+    SIGNAL bcd_resto     : STD_LOGIC_VECTOR(11 DOWNTO 0);
+
 BEGIN
 
     s_reset     <= NOT KEY(3);
@@ -85,21 +95,12 @@ BEGIN
     s_btn_write <= NOT KEY(2);
     s_start     <= NOT KEY(0);
 
-    -- Atribuição do sinal interno para o LED externo de pronto
     LEDG(0) <= s_pronto;
 
     ------------------------------------------------
     -- Controle Manual
     ------------------------------------------------
-    CONTROL : PC
-    PORT MAP(
-        clk       => CLOCK_50,
-        reset     => s_reset,
-        btn_read  => s_btn_read,
-        btn_write => s_btn_write,
-        we        => pc_we,
-        operation => operation_sig
-    );
+    CONTROL : PC PORT MAP(CLOCK_50, s_reset, s_btn_read, s_btn_write, pc_we, operation_sig);
 
     ------------------------------------------------
     -- O Algoritmo de Divisão
@@ -129,14 +130,7 @@ BEGIN
     ------------------------------------------------
     -- O Banco de Registradores
     ------------------------------------------------
-    OPERATIVA : PO
-    PORT MAP(
-        clk       => CLOCK_50,
-        we        => po_we,
-        endereco  => po_endereco,
-        data_in   => po_data_in,
-        data_out  => po_data_out
-    );
+    OPERATIVA : PO PORT MAP(CLOCK_50, po_we, po_endereco, po_data_in, po_data_out);
 
     ------------------------------------------------
     -- Escuta estática dos Registradores de Saída 
@@ -154,25 +148,32 @@ BEGIN
     END PROCESS;
 
     ------------------------------------------------
+    -- INSTANCIAÇÃO DOS CONVERSORES BCD
+    ------------------------------------------------
+    CONV_Q: bin2bcd PORT MAP(reg2_quociente(7 DOWNTO 0), bcd_quociente);
+    CONV_R: bin2bcd PORT MAP(reg3_resto(7 DOWNTO 0), bcd_resto);
+
+    ------------------------------------------------
     -- LÓGICA DE SELEÇÃO DO DISPLAY
     ------------------------------------------------
-    PROCESS(s_pronto, div_ativo, operation_sig, SW, po_data_out, reg2_quociente, reg3_resto)
-BEGIN
-    IF s_pronto = '1' THEN
-        display_data(15 DOWNTO 8) <= reg2_quociente(7 DOWNTO 0); 
-        display_data(7 DOWNTO 0)  <= reg3_resto(7 DOWNTO 0);
-        
-    ELSIF div_ativo = '1' THEN
-        display_data <= x"CACA";
-        
-    ELSE
-        CASE operation_sig IS
-            WHEN "10" => display_data <= ('0' & SW(14 DOWNTO 0));
-            WHEN "01" => display_data <= po_data_out;
-            WHEN OTHERS => display_data <= (x"000" & '0' & SW(17 DOWNTO 15));
-        END CASE;
-    END IF;
-END PROCESS;
+    PROCESS(s_pronto, div_ativo, operation_sig, SW, po_data_out, bcd_quociente, bcd_resto)
+    BEGIN
+        IF s_pronto = '1' THEN
+            display_data(15 DOWNTO 8) <= bcd_quociente(7 DOWNTO 0); 
+
+            display_data(7 DOWNTO 0)  <= bcd_resto(7 DOWNTO 0);
+
+        ELSIF div_ativo = '1' THEN
+            display_data <= x"CACA";
+
+        ELSE
+            CASE operation_sig IS
+                WHEN "10" => display_data <= ('0' & SW(14 DOWNTO 0));
+                WHEN "01" => display_data <= po_data_out;
+                WHEN OTHERS => display_data <= (x"000" & '0' & SW(17 DOWNTO 15));
+            END CASE;
+        END IF;
+    END PROCESS;
 
     ------------------------------------------------
     -- Instanciação dos Displays de 7 Segmentos
@@ -181,8 +182,6 @@ END PROCESS;
     HEX1_INST : hex7seg PORT MAP(display_data(7 DOWNTO 4), HEX1);
     HEX2_INST : hex7seg PORT MAP(display_data(11 DOWNTO 8), HEX2);
     HEX3_INST : hex7seg PORT MAP(display_data(15 DOWNTO 12), HEX3);
-	 
-	 var_quociente <= reg2_quociente;
+    var_quociente <= reg2_quociente;
     var_resto     <= reg3_resto;
-     
 END Structural;

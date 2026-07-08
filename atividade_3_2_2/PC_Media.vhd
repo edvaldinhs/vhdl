@@ -11,7 +11,7 @@ ENTITY PC_Media IS
         banco_endereco_r : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
         banco_we         : OUT STD_LOGIC;
         sel_escrita      : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-        
+
         show_E           : OUT STD_LOGIC;
         media_ativo      : OUT STD_LOGIC;
         led_pronto       : OUT STD_LOGIC
@@ -39,7 +39,7 @@ BEGIN
             estado_atual <= proximo_estado;
         END IF;
     END PROCESS;
-    
+
     start_pulse <= start AND NOT start_reg;
 
     PROCESS(estado_atual, start_pulse) 
@@ -103,7 +103,7 @@ BEGIN
                 banco_endereco_r <= "010";
                 led_pronto       <= '1'; 
                 IF start_pulse = '1' THEN proximo_estado <= S_IDLE; END IF;
-                
+
         END CASE;
     END PROCESS;
 END ARCHITECTURE;
