@@ -1,0 +1,44 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY PO_Media IS
+    PORT(
+        sw_y          : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
+        sel_escrita   : IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
+        
+        banco_escrita : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        display_x_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        display_y_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        display_res   : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    );
+END PO_Media;
+
+ARCHITECTURE Operativa OF PO_Media IS
+    -- CONSTANTE X: Substitua x"04D2" pelos 4 últimos dígitos da sua matrícula em Hexadecimal (Ex: 1234 = 04D2)
+    CONSTANT CONST_X : UNSIGNED(15 DOWNTO 0) := x"04D2"; 
+    
+    SIGNAL soma  : UNSIGNED(16 DOWNTO 0);
+    SIGNAL media : UNSIGNED(15 DOWNTO 0);
+BEGIN
+
+    -- Adiciona um bit extra '0' para evitar overflow na soma
+    soma <= ("0" & CONST_X) + ("0" & unsigned(sw_y));
+    
+    -- Deslocamento lógico para a direita (Equivale a dividir por 2)
+    media <= soma(16 DOWNTO 1); 
+
+    -- Multiplexador de dados para gravar no Banco de Registradores
+    WITH sel_escrita SELECT
+        banco_escrita <=
+            std_logic_vector(CONST_X) WHEN "00", -- Grava X no Reg 0
+            sw_y                      WHEN "01", -- Grava Y no Reg 1
+            std_logic_vector(media)   WHEN OTHERS; -- Grava Média no Reg 2
+
+    -- Formatação para os Displays de 7 Segmentos
+    -- O x"E" representa a inicial do integrante (aparece como um 'E' no display) + os 3 últimos dígitos de X
+    display_x_out <= x"E" & std_logic_vector(CONST_X(11 DOWNTO 0)); 
+    display_y_out <= sw_y;
+    display_res   <= std_logic_vector(media);
+
+END ARCHITECTURE;

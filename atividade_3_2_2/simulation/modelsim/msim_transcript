@@ -1,0 +1,303 @@
+# do top_level_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /home/edvaldinhs/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:09 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PO
+# -- Compiling architecture Structural of PO
+# End time: 02:33:09 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:09 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC_Media
+# -- Compiling architecture FSM of PC_Media
+# End time: 02:33:09 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:09 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder3x8
+# -- Compiling architecture Behavioral of decoder3x8
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity registrador16bits
+# -- Compiling architecture Behavioral of registrador16bits
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PO_Media
+# -- Compiling architecture Operativa of PO_Media
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity hex7seg
+# -- Compiling architecture Behavioral of hex7seg
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity PC
+# -- Compiling architecture Behavioral of PC
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bin2bcd
+# -- Compiling architecture behavior of bin2bcd
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity top_level
+# -- Compiling architecture Structural of top_level
+# -- Loading package NUMERIC_STD
+# -- Loading entity bin2bcd
+# -- Loading entity PC_Media
+# -- Loading entity PO_Media
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:33:10 on Jul 08,2026
+# vcom -reportprogress 300 -93 -work work /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_top_level_media
+# -- Compiling architecture sim of tb_top_level_media
+# -- Loading entity top_level
+# End time: 02:33:10 on Jul 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  tb_top_level_media
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" tb_top_level_media 
+# Start time: 02:33:10 on Jul 08,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_top_level_media(sim)
+# Loading work.top_level(structural)
+# Loading work.bin2bcd(behavior)
+# Loading work.pc(behavioral)
+# Loading work.pc_media(fsm)
+# Loading work.po_media(operativa)
+# Loading work.po(structural)
+# Loading work.decoder3x8(behavioral)
+# Loading work.registrador16bits(behavioral)
+# Loading work.hex7seg(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 150 ns  Iteration: 4  Instance: /tb_top_level_media/uut/CONVERSOR_DECIMAL
+# Break key hit
+# Simulation stop requested.
+# End time: 02:33:38 on Jul 08,2026, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 72

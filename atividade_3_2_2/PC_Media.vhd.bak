@@ -1,0 +1,119 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY PC_Media IS
+    PORT(
+        clk           : IN  STD_LOGIC;
+        reset         : IN  STD_LOGIC;
+        start         : IN  STD_LOGIC;
+
+        banco_endereco: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        banco_we      : OUT STD_LOGIC;
+        sel_escrita   : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+        
+        sel_display   : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+        media_ativo   : OUT STD_LOGIC;
+        led_pronto    : OUT STD_LOGIC
+    );
+END PC_Media;
+
+ARCHITECTURE FSM OF PC_Media IS
+    TYPE t_estado IS (
+        S_IDLE, 
+        S_WRITE_X, S_SHOW_X, S_WAIT_X, 
+        S_WRITE_Y, S_SHOW_Y, S_WAIT_Y, 
+        S_CALC, S_RESULT, S_WAIT_RES
+    );
+    SIGNAL estado_atual, proximo_estado : t_estado;
+    
+    -- Sinais para detector de borda do botão (Evita que os estados passem todos de uma vez)
+    SIGNAL start_reg, start_pulse : STD_LOGIC;
+BEGIN
+
+    -- Registrador de Estado e Detector de Borda
+    PROCESS(clk, reset) 
+    BEGIN
+        IF reset = '1' THEN
+            start_reg <= '0';
+            estado_atual <= S_IDLE;
+        ELSIF rising_edge(clk) THEN
+            start_reg <= start;
+            estado_atual <= proximo_estado;
+        END IF;
+    END PROCESS;
+    
+    -- Gera um pulso de 1 ciclo de clock apenas quando o botão é pressionado
+    start_pulse <= start AND NOT start_reg;
+
+    -- Lógica de Próximo Estado e Saídas
+    PROCESS(estado_atual, start_pulse) 
+    BEGIN
+        -- Valores Default
+        banco_endereco <= "000";
+        banco_we       <= '0';
+        sel_escrita    <= "00";
+        sel_display    <= "00";
+        media_ativo    <= '1';
+        led_pronto     <= '0';
+        proximo_estado <= estado_atual;
+
+        CASE estado_atual IS
+            WHEN S_IDLE =>
+                media_ativo <= '0'; -- Libera o banco para o controle manual (PC original)
+                IF start_pulse = '1' THEN
+                    proximo_estado <= S_WRITE_X;
+                END IF;
+
+            WHEN S_WRITE_X =>
+                banco_endereco <= "000"; -- Reg 0
+                sel_escrita    <= "00";  -- Seleciona Constante X
+                banco_we       <= '1';   -- Grava no banco
+                proximo_estado <= S_SHOW_X;
+
+            WHEN S_SHOW_X =>
+                sel_display <= "01";
+                proximo_estado <= S_WAIT_X;
+
+            WHEN S_WAIT_X =>
+                sel_display <= "01"; -- Fica travado mostrando o X no display
+                IF start_pulse = '1' THEN
+                    proximo_estado <= S_WRITE_Y;
+                END IF;
+
+            WHEN S_WRITE_Y =>
+                banco_endereco <= "001"; -- Reg 1
+                sel_escrita    <= "01";  -- Seleciona Y (chaves)
+                banco_we       <= '1';   -- Grava no banco
+                proximo_estado <= S_SHOW_Y;
+
+            WHEN S_SHOW_Y =>
+                sel_display <= "10";
+                proximo_estado <= S_WAIT_Y;
+
+            WHEN S_WAIT_Y =>
+                sel_display <= "10"; -- Fica travado mostrando o Y no display
+                IF start_pulse = '1' THEN
+                    proximo_estado <= S_CALC;
+                END IF;
+
+            WHEN S_CALC =>
+                banco_endereco <= "010"; -- Reg 2
+                sel_escrita    <= "10";  -- Seleciona o resultado da Média
+                banco_we       <= '1';   -- Grava no banco
+                proximo_estado <= S_RESULT;
+
+            WHEN S_RESULT =>
+                sel_display <= "11";
+                led_pronto  <= '1';
+                proximo_estado <= S_WAIT_RES;
+
+            WHEN S_WAIT_RES =>
+                sel_display <= "11"; -- Fica travado mostrando o Resultado Final
+                led_pronto  <= '1';  -- Acende o LED
+                IF start_pulse = '1' THEN
+                    proximo_estado <= S_IDLE; -- Pressionar start novamente reinicia o ciclo
+                END IF;
+                
+        END CASE;
+    END PROCESS;
+END ARCHITECTURE;

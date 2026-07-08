@@ -1,0 +1,398 @@
+Analysis & Synthesis report for top_level
+Wed Jul  8 02:56:52 2026
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top_level|PC_Media:CTRL_MEDIA|estado_atual
+  9. State Machine - |top_level|PC:CONTROL|EA
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jul  8 02:56:52 2026       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; top_level                                   ;
+; Top-level Entity Name              ; top_level                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 447                                         ;
+;     Total combinational functions  ; 332                                         ;
+;     Dedicated logic registers      ; 142                                         ;
+; Total registers                    ; 142                                         ;
+; Total pins                         ; 77                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; top_level          ; top_level          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; PO.vhd                           ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd                ;         ;
+; PC_Media.vhd                     ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd          ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd        ;         ;
+; registrador16bits.vhd            ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd ;         ;
+; PO_Media.vhd                     ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd          ;         ;
+; hex7seg.vhd                      ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd           ;         ;
+; top_level.vhd                    ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd         ;         ;
+; PC.vhd                           ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd                ;         ;
+; bin2bcd.vhd                      ; yes             ; User VHDL File  ; /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd           ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 447            ;
+;                                             ;                ;
+; Total combinational functions               ; 332            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 283            ;
+;     -- 3 input functions                    ; 42             ;
+;     -- <=2 input functions                  ; 7              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 316            ;
+;     -- arithmetic mode                      ; 16             ;
+;                                             ;                ;
+; Total registers                             ; 142            ;
+;     -- Dedicated logic registers            ; 142            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 77             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 142            ;
+; Total fan-out                               ; 1826           ;
+; Average fan-out                             ; 2.91           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name       ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-------------------+--------------+
+; |top_level                     ; 332 (31)            ; 142 (0)                   ; 0           ; 0            ; 0       ; 0         ; 77   ; 0            ; |top_level                                     ; top_level         ; work         ;
+;    |PC:CONTROL|                ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PC:CONTROL                          ; PC                ; work         ;
+;    |PC_Media:CTRL_MEDIA|       ; 9 (9)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PC_Media:CTRL_MEDIA                 ; PC_Media          ; work         ;
+;    |PO:OPERATIVA|              ; 90 (80)             ; 128 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA                        ; PO                ; work         ;
+;       |decoder3x8:dec|         ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|decoder3x8:dec         ; decoder3x8        ; work         ;
+;       |registrador16bits:reg0| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg0 ; registrador16bits ; work         ;
+;       |registrador16bits:reg1| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg1 ; registrador16bits ; work         ;
+;       |registrador16bits:reg2| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg2 ; registrador16bits ; work         ;
+;       |registrador16bits:reg3| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg3 ; registrador16bits ; work         ;
+;       |registrador16bits:reg4| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg4 ; registrador16bits ; work         ;
+;       |registrador16bits:reg5| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg5 ; registrador16bits ; work         ;
+;       |registrador16bits:reg6| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg6 ; registrador16bits ; work         ;
+;       |registrador16bits:reg7| ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO:OPERATIVA|registrador16bits:reg7 ; registrador16bits ; work         ;
+;    |PO_Media:DATA_MEDIA|       ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PO_Media:DATA_MEDIA                 ; PO_Media          ; work         ;
+;    |bin2bcd:CONVERSOR_DECIMAL| ; 131 (131)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|bin2bcd:CONVERSOR_DECIMAL           ; bin2bcd           ; work         ;
+;    |hex7seg:HEX0_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX0_INST                   ; hex7seg           ; work         ;
+;    |hex7seg:HEX1_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX1_INST                   ; hex7seg           ; work         ;
+;    |hex7seg:HEX2_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX2_INST                   ; hex7seg           ; work         ;
+;    |hex7seg:HEX3_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX3_INST                   ; hex7seg           ; work         ;
+;    |hex7seg:HEX4_INST|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|hex7seg:HEX4_INST                   ; hex7seg           ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_level|PC_Media:CTRL_MEDIA|estado_atual                                                                                                                                                                                                             ;
++-------------------------+-------------------------+-----------------------+---------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+------------------------+---------------------+
+; Name                    ; estado_atual.S_WAIT_RES ; estado_atual.S_RESULT ; estado_atual.S_CALC ; estado_atual.S_WAIT_Y ; estado_atual.S_SHOW_Y ; estado_atual.S_WRITE_Y ; estado_atual.S_WAIT_X ; estado_atual.S_SHOW_X ; estado_atual.S_WRITE_X ; estado_atual.S_IDLE ;
++-------------------------+-------------------------+-----------------------+---------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+------------------------+---------------------+
+; estado_atual.S_IDLE     ; 0                       ; 0                     ; 0                   ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                      ; 0                   ;
+; estado_atual.S_WRITE_X  ; 0                       ; 0                     ; 0                   ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 1                      ; 1                   ;
+; estado_atual.S_SHOW_X   ; 0                       ; 0                     ; 0                   ; 0                     ; 0                     ; 0                      ; 0                     ; 1                     ; 0                      ; 1                   ;
+; estado_atual.S_WAIT_X   ; 0                       ; 0                     ; 0                   ; 0                     ; 0                     ; 0                      ; 1                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_WRITE_Y  ; 0                       ; 0                     ; 0                   ; 0                     ; 0                     ; 1                      ; 0                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_SHOW_Y   ; 0                       ; 0                     ; 0                   ; 0                     ; 1                     ; 0                      ; 0                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_WAIT_Y   ; 0                       ; 0                     ; 0                   ; 1                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_CALC     ; 0                       ; 0                     ; 1                   ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_RESULT   ; 0                       ; 1                     ; 0                   ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                      ; 1                   ;
+; estado_atual.S_WAIT_RES ; 1                       ; 0                     ; 0                   ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                      ; 1                   ;
++-------------------------+-------------------------+-----------------------+---------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+------------------------+---------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------+
+; State Machine - |top_level|PC:CONTROL|EA ;
++----------+----------+---------+----------+
+; Name     ; EA.WRITE ; EA.READ ; EA.IDLE  ;
++----------+----------+---------+----------+
+; EA.IDLE  ; 0        ; 0       ; 0        ;
+; EA.READ  ; 0        ; 1       ; 1        ;
+; EA.WRITE ; 1        ; 0       ; 1        ;
++----------+----------+---------+----------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 142   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 14    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 128   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |top_level|display_final[19]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top_level|PC:CONTROL|PE.IDLE ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |top_level|data_in_sig[15]    ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |top_level|valor_binario[11]  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |top_level|PO:OPERATIVA|Mux4  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 77                          ;
+; cycloneiii_ff         ; 142                         ;
+;     CLR               ; 14                          ;
+;     ENA               ; 128                         ;
+; cycloneiii_lcell_comb ; 336                         ;
+;     arith             ; 16                          ;
+;         3 data inputs ; 16                          ;
+;     normal            ; 320                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 283                         ;
+;                       ;                             ;
+; Max LUT depth         ; 21.00                       ;
+; Average LUT depth     ; 14.41                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Wed Jul  8 02:56:43 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file PO.vhd
+    Info (12022): Found design unit 1: PO-Structural File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd Line: 17
+    Info (12023): Found entity 1: PO File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file PC_Media.vhd
+    Info (12022): Found design unit 1: PC_Media-FSM File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd Line: 21
+    Info (12023): Found entity 1: PC_Media File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
+    Info (12022): Found design unit 1: decoder3x8-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd Line: 12
+    Info (12023): Found entity 1: decoder3x8 File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registrador16bits.vhd
+    Info (12022): Found design unit 1: registrador16bits-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd Line: 13
+    Info (12023): Found entity 1: registrador16bits File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file PO_Media.vhd
+    Info (12022): Found design unit 1: PO_Media-Operativa File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd Line: 16
+    Info (12023): Found entity 1: PO_Media File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file hex7seg.vhd
+    Info (12022): Found design unit 1: hex7seg-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd Line: 11
+    Info (12023): Found entity 1: hex7seg File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
+    Info (12022): Found design unit 1: top_level-Structural File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 25
+    Info (12023): Found entity 1: top_level File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file PC.vhd
+    Info (12022): Found design unit 1: PC-Behavioral File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd Line: 17
+    Info (12023): Found entity 1: PC File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd.vhd
+    Info (12022): Found design unit 1: bin2bcd-behavior File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd Line: 12
+    Info (12023): Found entity 1: bin2bcd File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd Line: 5
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CONVERSOR_DECIMAL" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 77
+Info (12128): Elaborating entity "PC" for hierarchy "PC:CONTROL" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 80
+Info (12128): Elaborating entity "PC_Media" for hierarchy "PC_Media:CTRL_MEDIA" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 82
+Info (12128): Elaborating entity "PO_Media" for hierarchy "PO_Media:DATA_MEDIA" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 85
+Info (12128): Elaborating entity "PO" for hierarchy "PO:OPERATIVA" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 93
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "PO:OPERATIVA|decoder3x8:dec" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd Line: 43
+Info (12128): Elaborating entity "registrador16bits" for hierarchy "PO:OPERATIVA|registrador16bits:reg0" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd Line: 45
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:HEX0_INST" File: /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd Line: 124
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 540 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 463 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Wed Jul  8 02:56:52 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+

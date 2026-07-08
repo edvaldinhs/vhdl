@@ -1,0 +1,432 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/simulation/modelsim
+Ebin2bcd
+Z1 w1783488692
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 7
+R0
+Z5 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd
+Z6 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd
+l0
+L5 1
+V^4J3[HBK:iG7`K7S3j^2=2
+!s100 oJ<nJX@>zM03i;]f47g=30
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1783488790
+!i10b 1
+Z9 !s108 1783488790.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd|
+Z11 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/bin2bcd.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+R4
+Z14 DEx4 work 7 bin2bcd 0 22 ^4J3[HBK:iG7`K7S3j^2=2
+!i122 7
+l13
+L12 23
+VN?C=RDghlB;3ghRT64eWH0
+!s100 ZG;5>VT[ncJEgOPDfE>P@1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edecoder3x8
+Z15 w1783484085
+R3
+R4
+!i122 2
+R0
+Z16 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd
+Z17 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd
+l0
+L4 1
+VC3zN1ZHcd_0YHlz32`42`0
+!s100 ZBkc9=R>W=cY08coX7Vi52
+R7
+31
+R8
+!i10b 1
+Z18 !s108 1783488789.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd|
+Z20 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/decoder3x8.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 10 decoder3x8 0 22 C3zN1ZHcd_0YHlz32`42`0
+!i122 2
+l13
+L12 22
+VYEifH?F54HESoZTHmLY051
+!s100 AMGN`3T1R;bzK@>6=TikX3
+R7
+31
+R8
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Ehex7seg
+Z21 w1783488725
+R3
+R4
+!i122 5
+R0
+Z22 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd
+Z23 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd
+l0
+L4 1
+VTY>UUO7mI80^SZg_<3?RK0
+!s100 ?NL[OaW62l;F_45]Po_FI1
+R7
+31
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd|
+Z25 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/hex7seg.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 7 hex7seg 0 22 TY>UUO7mI80^SZg_<3?RK0
+!i122 5
+l12
+L11 30
+VQ4m@XBHiXZ?F8^1HgR@4l2
+!s100 YR@TKnPnWdm:dCZ_ZE1mH1
+R7
+31
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+R13
+Epc
+R15
+R3
+R4
+!i122 6
+R0
+Z26 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd
+Z27 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd
+l0
+L4 1
+V4bOb:=lZ?LaNYQTNlPP9^1
+!s100 W;LU;l]T^n>mh6^za<han1
+R7
+31
+R8
+!i10b 1
+R9
+Z28 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd|
+Z29 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 2 pc 0 22 4bOb:=lZ?LaNYQTNlPP9^1
+!i122 6
+l23
+L17 81
+VMinFh>6^HCb03K;0^jP6H1
+!s100 2h<hoSO9f2P6DV2OV;mMP1
+R7
+31
+R8
+!i10b 1
+R9
+R28
+R29
+!i113 1
+R12
+R13
+Epc_media
+Z30 w1783488658
+R3
+R4
+!i122 1
+R0
+Z31 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd
+Z32 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd
+l0
+L4 1
+VUXa^^Dh;YF>z0]Em?Ceem1
+!s100 V2]Uba6ehl0VnB>zaL=AX2
+R7
+31
+Z33 !s110 1783488789
+!i10b 1
+R18
+Z34 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd|
+Z35 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PC_Media.vhd|
+!i113 1
+R12
+R13
+Afsm
+R3
+R4
+Z36 DEx4 work 8 pc_media 0 22 UXa^^Dh;YF>z0]Em?Ceem1
+!i122 1
+l30
+L21 89
+V@RSRMXNC[7S`e=5^lW0]M3
+!s100 WRMcl9Z]GS2hL:IL0JUJP1
+R7
+31
+R33
+!i10b 1
+R18
+R34
+R35
+!i113 1
+R12
+R13
+Epo
+Z37 w1783488635
+R3
+R4
+!i122 0
+R0
+Z38 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd
+Z39 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd
+l0
+L4 1
+V0DZ5bBV>XSgRad9RT7SHE2
+!s100 >5HmD9Y9>DCZPl`Dm1KC@3
+R7
+31
+R33
+!i10b 1
+R18
+Z40 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd|
+Z41 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO.vhd|
+!i113 1
+R12
+R13
+Astructural
+R3
+R4
+DEx4 work 2 po 0 22 0DZ5bBV>XSgRad9RT7SHE2
+!i122 0
+l41
+L17 52
+V@@:<2mcJ6LQ7_fe8D@4E02
+!s100 U0fc4XbXh58KQ?4cef=nn3
+R7
+31
+R33
+!i10b 1
+R18
+R40
+R41
+!i113 1
+R12
+R13
+Epo_media
+Z42 w1783488647
+R2
+R3
+R4
+!i122 4
+R0
+Z43 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd
+Z44 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd
+l0
+L5 1
+Vm:b1e=J_0]PAh][LMdH3e2
+!s100 SQ>VB>3lS2hCdaKEdHYG92
+R7
+31
+R8
+!i10b 1
+R9
+Z45 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd|
+Z46 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/PO_Media.vhd|
+!i113 1
+R12
+R13
+Aoperativa
+R2
+R3
+R4
+Z47 DEx4 work 8 po_media 0 22 m:b1e=J_0]PAh][LMdH3e2
+!i122 4
+l21
+L16 17
+VoYZiOIJ7XH[5NOZ2b]Un:1
+!s100 ]PC[;8Dc75E_GiDc05Fz_2
+R7
+31
+R8
+!i10b 1
+R9
+R45
+R46
+!i113 1
+R12
+R13
+Eregistrador16bits
+R15
+R3
+R4
+!i122 3
+R0
+Z48 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd
+Z49 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd
+l0
+L4 1
+VT7a<WN4lHP:ij2eoUcU6>2
+!s100 [_7;oPY1O2>dZ>j:TjkoD0
+R7
+31
+R8
+!i10b 1
+R9
+Z50 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd|
+Z51 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/registrador16bits.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R3
+R4
+DEx4 work 17 registrador16bits 0 22 T7a<WN4lHP:ij2eoUcU6>2
+!i122 3
+l14
+L13 13
+V5IkT8^`=Km]9id[1_a6J50
+!s100 4MKBGimOTnSCK]SKQkcZ70
+R7
+31
+R8
+!i10b 1
+R9
+R50
+R51
+!i113 1
+R12
+R13
+Etb_top_level_media
+Z52 w1783488743
+R2
+R3
+R4
+!i122 9
+R0
+Z53 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd
+Z54 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd
+l0
+L5 1
+VD<n`5D;MZ`W711B9:gT]A0
+!s100 SdcAB4C9nh@;TKzhIi@?K1
+R7
+31
+R8
+!i10b 1
+R9
+Z55 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd|
+!s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd|
+!i113 1
+R12
+R13
+Asim
+Z56 DEx4 work 9 top_level 0 22 R?]ei:hPR8zC?nI<B96:o0
+R2
+R3
+R4
+DEx4 work 18 tb_top_level_media 0 22 D<n`5D;MZ`W711B9:gT]A0
+!i122 9
+l24
+L8 63
+VYbRa3c@o<13SZb=3R71BO2
+!s100 7d;;dgTJ7Z=VB][6[jlAV3
+R7
+31
+R8
+!i10b 1
+R9
+R55
+Z57 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/tb_top_level_media.vhd|
+!i113 1
+R12
+R13
+Etop_level
+Z58 w1783488674
+R3
+R4
+!i122 8
+R0
+Z59 8/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd
+Z60 F/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd
+l0
+L4 1
+VR?]ei:hPR8zC?nI<B96:o0
+!s100 mj4bl8kU7<nLgbZmOAU@m1
+R7
+31
+R8
+!i10b 1
+R9
+Z61 !s90 -reportprogress|300|-93|-work|work|/home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd|
+Z62 !s107 /home/edvaldinhs/EddyPrograms/vhdl/atividade_3_2_2/top_level.vhd|
+!i113 1
+R12
+R13
+Astructural
+R47
+R36
+R2
+R14
+R3
+R4
+R56
+!i122 8
+l68
+L25 106
+VTnH__KHRjMRMKecdNeGPd0
+!s100 ^PnhZ4W4SdQ@1bXhcb[^U1
+R7
+31
+R8
+!i10b 1
+R9
+R61
+R62
+!i113 1
+R12
+R13

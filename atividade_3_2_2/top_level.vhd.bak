@@ -1,0 +1,176 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY top_level IS
+    PORT(
+        CLOCK_50 : IN STD_LOGIC;
+
+        SW       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        KEY      : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        ADDR     : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+          
+        SAIDA    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        OP_S     : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+        HEX0     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        HEX1     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        HEX2     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        HEX3     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        
+        LEDG     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0) -- Para sinalizar o fim do algoritmo
+    );
+END top_level;
+
+ARCHITECTURE Structural OF top_level IS
+
+    COMPONENT PC
+        PORT(
+            clk, reset, btn_read, btn_write : IN STD_LOGIC;
+            we                              : OUT STD_LOGIC;
+            operation                       : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT PO
+        PORT(
+            clk       : IN STD_LOGIC;
+            we        : IN STD_LOGIC;
+            endereco  : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+            data_in   : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+            data_out  : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT hex7seg
+        PORT(
+            hex : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+            seg : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    -- Sinais Internos Manuais
+    SIGNAL pc_we         : STD_LOGIC;
+    SIGNAL pc_operation  : STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL po_data_out   : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL endereco_reg  : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
+
+    -- Sinais do Algoritmo de Média
+    SIGNAL media_ativo          : STD_LOGIC;
+    SIGNAL media_banco_endereco : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL media_banco_we       : STD_LOGIC;
+    SIGNAL media_sel_escrita    : STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL media_sel_display    : STD_LOGIC_VECTOR(1 DOWNTO 0);
+    SIGNAL media_banco_in       : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    
+    SIGNAL disp_x, disp_y, disp_res : STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+    -- Sinais Roteados (MUX)
+    SIGNAL we_sig       : STD_LOGIC;
+    SIGNAL addr_sig     : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL data_in_sig  : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL display_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+BEGIN
+
+    PROCESS(CLOCK_50)
+    BEGIN
+         IF rising_edge(CLOCK_50) THEN   
+                IF KEY(0) = '0' THEN
+                     endereco_reg <= ADDR & SW(15);
+                END IF;
+         END IF;
+    END PROCESS;
+
+    ------------------------------------------------
+    -- Controle Manual Original (PC)
+    ------------------------------------------------
+    CONTROL : PC
+    PORT MAP(
+        clk       => CLOCK_50,
+        reset     => NOT KEY(3),
+        btn_read  => NOT KEY(1),
+        btn_write => NOT KEY(2),
+        we        => pc_we,
+        operation => pc_operation
+    );
+
+    ------------------------------------------------
+    -- Algoritmo de Média (PC_Media e PO_Media)
+    ------------------------------------------------
+    CTRL_MEDIA : ENTITY work.PC_Media
+    PORT MAP(
+        clk            => CLOCK_50,
+        reset          => NOT KEY(3),
+        start          => NOT KEY(0), -- Botão Start para avançar os passos
+        banco_endereco => media_banco_endereco,
+        banco_we       => media_banco_we,
+        sel_escrita    => media_sel_escrita,
+        sel_display    => media_sel_display,
+        media_ativo    => media_ativo,
+        led_pronto     => LEDG(0)
+    );
+
+    DATA_MEDIA : ENTITY work.PO_Media
+    PORT MAP(
+        sw_y          => SW(15 DOWNTO 0),
+        sel_escrita   => media_sel_escrita,
+        banco_escrita => media_banco_in,
+        display_x_out => disp_x,
+        display_y_out => disp_y,
+        display_res   => disp_res
+    );
+
+    ------------------------------------------------
+    -- MULTIPLEXADORES (Decidem quem controla o Banco)
+    ------------------------------------------------
+    we_sig      <= media_banco_we       WHEN media_ativo = '1' ELSE pc_we;
+    addr_sig    <= media_banco_endereco WHEN media_ativo = '1' ELSE endereco_reg;
+    data_in_sig <= media_banco_in       WHEN media_ativo = '1' ELSE SW(15 DOWNTO 0);
+
+    ------------------------------------------------
+    -- Banco de Registradores Existente (PO)
+    ------------------------------------------------
+    OPERATIVA : PO
+    PORT MAP(
+        clk       => CLOCK_50,
+        we        => we_sig,
+        endereco  => addr_sig,
+        data_in   => data_in_sig,
+        data_out  => po_data_out
+    );
+
+    ------------------------------------------------
+    -- Multiplexador do Display de 7 Segmentos
+    ------------------------------------------------
+    PROCESS(media_ativo, media_sel_display, pc_operation, po_data_out, SW, disp_x, disp_y, disp_res)
+    BEGIN
+        IF media_ativo = '1' THEN
+            -- Exibições do Algoritmo de Média
+            CASE media_sel_display IS
+                WHEN "01"   => display_data <= disp_x;
+                WHEN "10"   => display_data <= disp_y;
+                WHEN "11"   => display_data <= disp_res;
+                WHEN OTHERS => display_data <= (OTHERS => '0');
+            END CASE;
+        ELSE
+            -- Exibições Originais do Controle Manual
+            CASE pc_operation IS
+                WHEN "10"   => display_data <= SW(15 DOWNTO 0);
+                WHEN "01"   => display_data <= po_data_out;
+                WHEN OTHERS => display_data <= (OTHERS => '0');
+            END CASE;
+        END IF;
+    END PROCESS;
+     
+    SAIDA <= po_data_out;
+    OP_S  <= pc_operation;
+
+    ------------------------------------------------
+    -- Decodificadores 7 Segmentos
+    ------------------------------------------------
+    HEX0_INST : hex7seg PORT MAP(display_data(3 DOWNTO 0), HEX0);
+    HEX1_INST : hex7seg PORT MAP(display_data(7 DOWNTO 4), HEX1);
+    HEX2_INST : hex7seg PORT MAP(display_data(11 DOWNTO 8), HEX2);
+    HEX3_INST : hex7seg PORT MAP(display_data(15 DOWNTO 12), HEX3);
+
+END Structural;
